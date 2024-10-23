@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores da Terra</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: r;
+        }
+
+        header {
+            background-color:#FFD700;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            gap: 10px; /* Reduzido o espaço entre os elementos */
+        }
+
+        article {
+            background-color: #f4f4f4;
+            padding: 20px;
+            width: 50%; /* Reduzido para mais espaço para o aside */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex; /* Adicionado para usar flexbox */
+            flex-direction: column; /* Direção da coluna */
+            justify-content: space-between; /* Espaço entre os itens */
+        }
+
+        .center-content {
+            text-align: center;
+            flex-grow: 1; /* Permite que o conteúdo central preencha o espaço disponível */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza o conteúdo verticalmente */
+        }
+
+        .center-content h2 {
+            margin-bottom: 10px;
+        }
+
+        .center-content img {
+            display: block;
+            margin: 0 auto;
+            max-height: 200px; /* Define uma altura máxima para a imagem */
+            object-fit: cover; /* Mantém a proporção da imagem */
+        }
+
+        aside {
+            background-color: #f1f1f1;
+            padding: 20px;
+            width: 40%; /* Mantido o mesmo */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Sabores da Terra</h1>
+    </header>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Nosso Menu</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="contato.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <section>
+        <!-- Artigo principal -->
+        <article>
+            <div class="center-content">
+                <h2>Seja Bem Vindo ao Sabores da Terra</h2>
+                <img src="images/restaurante.jfif" alt="restaurante" width="200">
+            </div>
+        </article>
+
+        <!-- Barra lateral -->
+        <aside>
+            <h3>Informações Extras</h3>
+            <p>Horário de funcionamento: Seg-Sex: 08h às 22h</p>
+            <p>Sab: 09h às 20h</p>
+            <p>Telefone para reservas: (258) 869894763/844894763</p>
+            <p>Email: saboresdaterra@gmail.com</p>
+            <p>Moçambique, Zambézia, Gurue</p>
+        </aside>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Sabores da Terra. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+

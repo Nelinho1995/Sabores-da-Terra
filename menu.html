@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Sabores da Terra</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Estilo básico para ocultar itens */
+        .item {
+            display: none; /* Oculta todos os itens por padrão */
+        }
+
+        /* Centralizar o corpo da página */
+        body {
+            display: flex;
+            flex-direction: column; /* Para alinhar o header e a seção verticalmente */
+            justify-content: flex-start;  /* Alinha os itens para o topo */
+            align-items: center;      /* Centraliza horizontalmente */
+            min-height: 100vh;        /* Faz com que o body ocupe 100% da altura da janela */
+            margin: 0;                /* Remove as margens padrão do body */
+            background-color: black;  /* Cor de fundo */
+            text-align: center;       /* Centraliza o texto dentro do body */
+        }
+
+        /* Estilo da seção principal */
+        section {
+            background-color: white;  /* Cor de fundo para a seção */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar a seção */
+            max-width: 600px;         /* Limita a largura da seção */
+            width: 100%;              /* Garante que a seção ocupe até 100% do espaço disponível */
+            margin-top: 20px;         /* Espaço acima da seção */
+        }
+
+        /* Estilo para o header, centralizando os botões */
+        header {
+            display: flex;
+            flex-direction: column; /* Coloca os elementos em colunas */
+            align-items: center;     /* Centraliza horizontalmente */
+            gap: 20px;               /* Espaçamento entre as seções */
+            margin-bottom: 20px;     /* Espaço abaixo do header */
+        }
+
+        /* Estilo para os botões */
+        button {
+            padding: 15px 30px;      /* Aumenta o tamanho dos botões */
+            font-size: 18px;         /* Aumenta o tamanho do texto */
+            background-color: #003366; /* Cor de fundo azul escuro */
+            color: white;            /* Cor do texto */
+            border: none;            /* Remove a borda */
+            border-radius: 5px;      /* Arredonda os cantos */
+            cursor: pointer;         /* Muda o cursor para indicar que é clicável */
+            transition: background-color 0.3s ease; /* Animação suave na mudança de cor */
+        }
+
+        /* Efeito hover para os botões */
+        button:hover {
+            background-color: #002244; /* Cor mais escura ao passar o mouse */
+        }
+
+        /* Estilo da barra de navegação */
+        nav {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            margin-top: 10px; /* Espaço abaixo do título "Sabores da Terra" */
+            display: flex;     /* Alinha os itens na barra de navegação horizontalmente */
+            justify-content: center; /* Centraliza os itens da barra de navegação */
+        }
+
+        /* Estilo dos links da barra de navegação */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Alinha os links na mesma linha */
+            gap: 20px;     /* Espaçamento entre os links */
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* Cor personalizada para o título principal */
+        h1 {
+            color: #ff5733; /* Cor laranja-avermelhada */
+            margin: 10px 0; /* Espaço reduzido acima e abaixo do título principal */
+            font-size: 48px; /* Aumenta o tamanho do título */
+        }
+
+        /* Cor personalizada para os subtítulos */
+        h2 {
+            color: #33c1ff; /* Cor azul-claro */
+        }
+
+        /* Espaço adicional abaixo do título para os links */
+        .title {
+            margin-bottom: 40px;
+        }
+
+        /* Estilo para o título "Nosso Menu" */
+        .menu-title {
+            font-size: 36px; /* Aumenta o tamanho da fonte */
+            color: #ff5733;  /* Cor laranja-avermelhada */
+            margin-bottom: 20px; /* Espaçamento abaixo do título */
+        }
+
+        /* Estilo para centralizar os botões de categoria */
+        .category-buttons {
+            display: flex;
+            justify-content: center; /* Centraliza os botões */
+            gap: 20px;               /* Espaçamento entre os botões */
+        }
+
+        /* Estilo para o rodapé */
+        footer {
+            margin-top: auto; /* Faz o rodapé ficar no fundo da página */
+            padding: 10px 0;
+            color: white;
+            background-color: #333; /* Cor do fundo do rodapé */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Título "Sabores da Terra" e barra de navegação na mesma linha -->
+    <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <h1>Sabores da Terra</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Nosso Menu</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+                <li><a href="contato.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <header>
+        <!-- Título "Nosso Menu" -->
+        <h2 class="menu-title">Nosso Menu</h2>
+
+        <!-- Botões para filtrar o menu -->
+        <div class="category-buttons">
+            <button onclick="filterMenu('vegetariano')">Vegetariano</button>
+            <button onclick="filterMenu('prato-do-dia')">Prato do Dia</button>
+        </div>
+    </header>
+
+    <section id="menu">
+        <div class="item" data-category="vegetariano">
+            <h2>Dose de Batatas Fritas</h2>
+            <img src="images/Dose de Batatas Fritas.jfif" alt="Dose de Batatas Fritas" width="200">
+            <p>Crocância que vicia! Sabor que encanta!</p>
+            <span>150 Mtn</span>
+        </div>
+
+        <div class="item" data-category="vegetariano">
+            <h2>Moqueca de banana</h2>
+            <img src="images/Moqueca de banana.jfif" alt="Moqueca de banana" width="200">
+            <p>Bananas-da-terra grelhadas em um molho cremoso de leite de coco!</p>
+            <span>200 Mtn</span>
+        </div>
+
+        <div class="item" data-category="vegetariano">
+            <h2>Suflê de cenoura</h2>
+            <img src="images/Suflê de cenoura.jfif" alt="Suflê de cenoura" width="200">
+            <p>Leve e saboroso, um clássico que derrete na boca!</p>
+            <span>150 Mtn</span>
+        </div>
+
+        <div class="item" data-category="prato-do-dia">
+            <h2>Frango Grelhado</h2>
+            <img src="images/Frango Grelhado.jfif" alt="Frango Grelhado" width="200">
+            <p>Acompanhado de legumes salteados.</p>
+            <span>300 Mtn</span>
+        </div>
+
+        <div class="item" data-category="prato-do-dia">
+            <h2>Fígado ao Molho Madeira</h2>
+            <img src="images/Figado ao molho madeira.jpg" alt="Fígado ao Molho Madeira" width="200">
+            <p>Experimente essa delícia que combina tradição e inovação!</p>
+            <span>350 Mtn</span>
+        </div>
+
+        <div class="item" data-category="prato-do-dia">
+            <h2>Cachorro Quente</h2>
+            <img src="images/Cachoro Quente.jfif" alt="Cachorro Quente" width="200">
+            <p>Acompanhado de salsinha picada, para um toque fresco e herbáceo.</p>
+            <span>250 Mtn</span>
+        </div>
+    </section>
+
+    <script>
+        function filterMenu(category) {
+            // Seleciona todos os itens do menu
+            const items = document.querySelectorAll('.item');
+
+            // Percorre todos os itens
+            items.forEach(item => {
+                if (category === 'none') {
+                    item.style.display = 'block'; // Exibe todos os itens
+                } else {
+                    // Verifica a categoria e oculta ou exibe o item
+                    item.style.display = item.getAttribute('data-category') === category ? 'block' : 'none';
+                }
+            });
+        }
+
+        // Exibir todos os itens ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            filterMenu('todos');
+        });
+    </script>
+
+    <!-- Rodapé com o endereço da página -->
+    <footer>
+        <p>Telefone para reservas: (258) 869894763/844894763</p>
+        <p>Email: saboresdaterra@gmail.com</p>
+        <p>Moçambique, Zambézia, Gurue.</p>
+
+    </footer>
+</body>
+</html>
+ <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Sabores da Terra. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

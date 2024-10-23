@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Sabores da Terra</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Estilo básico para centralizar o conteúdo */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center;     /* Centraliza horizontalmente */
+            min-height: 100vh;       /* Faz o body ocupar 100% da altura da janela */
+            margin: 0;               /* Remove as margens padrão do body */
+            background-color: #f4f4f4; /* Cor de fundo */
+            text-align: center;      /* Centraliza o texto dentro do body */
+        }
+
+        header {
+            background-color: #333; /* Cor de fundo do cabeçalho */
+            color: #FFA500;            /* Cor do texto */
+            padding: 10px;          /* Espaçamento interno */
+            width: 100%;            /* Largura total */
+            text-align: center;      /* Centraliza o texto no cabeçalho */
+        }
+
+        nav {
+            background-color: #444; /* Cor de fundo da barra de navegação */
+            width: 100%;            /* Largura total */
+            display: flex;          /* Utiliza Flexbox para a barra de navegação */
+            justify-content: center; /* Centraliza os links horizontalmente */
+        }
+
+        nav a {
+            color: #FFA500;          /* Cor dos links (laranja) */
+            text-decoration: none; /* Remove o sublinhado dos links */
+            padding: 10px 15px;    /* Espaçamento interno dos links */
+        }
+
+        nav a:hover {
+            background-color: #575757; /* Cor de fundo ao passar o mouse */
+        }
+
+        section {
+            background-color: black; /* Cor de fundo para a seção */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar a seção */
+            max-width: 400px;        /* Limita a largura da seção */
+            width: 100%;             /* Garante que a seção ocupe até 100% do espaço disponível */
+            margin-top: 20px;       /* Margem superior */
+        }
+
+        /* Centralizar o conteúdo do formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;  /* Centraliza os elementos horizontalmente */
+        }
+
+        /* Estilo dos labels */
+        label {
+            align-self: flex-start; /* Alinha os labels à esquerda */
+            color: white;
+            margin-top: 10px;
+        }
+
+        /* Estilo dos inputs e do botão */
+        input, button {
+            margin: 10px 0;          /* Espaçamento entre os elementos */
+            padding: 10px;           /* Espaçamento interno dos inputs e botão */
+            width: 100%;             /* Garante que os inputs ocupem toda a largura da seção */
+            border: 1px solid #ccc;  /* Borda padrão */
+            border-radius: 4px;      /* Bordas arredondadas */
+        }
+
+        button {
+            background-color: #4CAF50; /* Cor de fundo do botão */
+            color: white;               /* Cor do texto do botão */
+            border: none;               /* Remove a borda padrão do botão */
+            cursor: pointer;            /* Muda o cursor para indicar que é clicável */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Cor de fundo do botão ao passar o mouse */
+        }
+
+        /* Estilo para a mensagem de confirmação */
+        #confirmacao {
+            margin-top: 20px;
+            color: #32CD32; 
+            font-size: 18px; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sabores da Terra</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Nosso Menu</a>
+        <a href="reservas.html">Reservas</a>
+        <a href="contactos.html">Contactos</a>
+    </nav>
+
+    <section>
+        <h2>Faça sua Reserva</h2>
+        <form id="reservaForm" onsubmit="return validarReserva()">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" placeholder="Seu Nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Seu Email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" placeholder="Seu Telefone" required>
+
+            <label for="data">Data da Reserva:</label>
+            <input type="date" id="data" required>
+
+            <label for="hora">Hora da Reserva:</label>
+            <input type="time" id="hora" required>
+
+            <label for="pessoas">Número de Pessoas:</label>
+            <input type="number" id="pessoas" placeholder="Número de Pessoas" min="1" required>
+
+            <button type="submit">Enviar Reserva</button>
+        </form>
+
+        <p id="confirmacao" style="display:none;">Reserva foi recebida com sucesso!</p>
+    </section>
+
+    <script>
+        function validarReserva() {
+            // Previne o comportamento padrão de envio do formulário
+            event.preventDefault();
+
+            // Exibe a mensagem de confirmação
+            document.getElementById('confirmacao').style.display = 'block';
+
+            // Opcional: Limpa os campos do formulário após o envio
+            document.getElementById('reservaForm').reset();
+
+            // Retorna falso para evitar o envio do formulário
+            return false;
+        }
+    </script>
+</body>
+</html>
+<!-- Rodapé com o endereço da página -->
+<footer>
+    <p>Telefone para reservas: (258) 869894763/844894763</p>
+    <p>Email: saboresdaterra@gmail.com</p>
+    <p>Moçambique, Zambézia, Gurue.</p>
+</footer>
+
+</body>
+</html>
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2024 Sabores da Terra. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

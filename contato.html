@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Sabores da Terra</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* Estilo básico para ocultar itens */
+        .item {
+            display: none; /* Oculta todos os itens por padrão */
+        }
+
+        /* Centralizar o corpo da página */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: black;
+            text-align: center;
+        }
+
+        /* Estilo da barra de navegação */
+        nav {
+            width: 100%;
+            background-color: #ff5733; /* Cor de fundo da barra de navegação */
+            padding: 20px 0;
+            position: fixed; /* Fixa a barra no topo da página */
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* Nome do restaurante no topo da barra */
+        .brand-name {
+            font-size: 36px;  /* Tamanho maior para o título */
+            font-weight: bold;
+            color: white;
+            margin-bottom: 20px; /* Espaçamento entre o nome e os links */
+        }
+
+        /* Estilo para os links */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        /* Estilo dos botões de link com azul escuro */
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;   /* Tamanho das letras dos links */
+            background-color: #003366; /* Azul escuro */
+            padding: 10px 20px;
+            border-radius: 5px; /* Bordas arredondadas */
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #002244; /* Cor mais escura ao passar o mouse */
+        }
+
+        /* Centralizar o conteúdo abaixo da barra de navegação */
+        main {
+            margin-top: 150px; /* Espaço para a barra de navegação */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Estilo da seção principal */
+        section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Estilo dos botões */
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff451e;
+        }
+
+        h1 {
+            color: #ff5733;
+        }
+
+        h2:first-of-type {
+            color: #33c1ff;
+        }
+
+        /* Estilo para a seção de contato */
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Estilo para o mapa */
+        .map {
+            margin-top: 20px;
+            border: none;
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegação -->
+    <nav>
+        <!-- Nome do restaurante -->
+        <div class="brand-name">Sabores da Terra</div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Nosso Menu</a></li>
+            <li><a href="reservas.html">Reservas</a></li>
+            <li><a href="contato.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Seção de contato -->
+        <section class="contact-info">
+            <h2>Informações de Contato</h2>
+            <p>Telefone para reservas: (258) 869894763/844894763</p>
+            <p>Email: saboresdaterra@gmail.com</p>
+            <p>Moçambique, Zambézia, Gurue.</p>
+            <!-- Mapa interativo do Google Maps -->
+            <iframe 
+                class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d64218.1686968717!2d36.96069458251863!3d-15.477152670573021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18e8a94cfc004f49%3A0xb123c69d6dc71c09!2sGurue%2C%20Mo%C3%A7ambique!5e0!3m2!1spt-PT!2sbr!4v1697967429445!5m2!1spt-PT!2sbr"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </section>
+    </main>
+
+    <script>
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                if (category === 'todos') {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = item.getAttribute('data-category') === category ? 'block' : 'none';
+                }
+            });
+        }
+
+        filterMenu('none');
+    </script>
+
+    <p>&copy; 2024 Sabores da Terra. Todos os direitos reservados.</p>
+
+</body>
+</html>
